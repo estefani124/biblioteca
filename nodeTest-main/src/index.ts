@@ -10,6 +10,8 @@ import { StatusRouter } from "./status/status.router";
 import { PriorityRouter } from "./priority/priority.router";
 
 
+
+
 class StartServer extends ConfigServer {
     public app: express.Application = express();
     public port: number = this.getNumberEnv('PORT') || 3000;
@@ -29,7 +31,8 @@ class StartServer extends ConfigServer {
         return [
           new TaskRouter().router,
           new StatusRouter().router,
-          new PriorityRouter().router
+          new PriorityRouter().router,
+          new BookRouter().router
         ];
 
     }
